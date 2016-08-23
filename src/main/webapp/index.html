@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="notesApp">
+<head>
+    <title>My Angular App</title>
+    <link rel="stylesheet" href="css/tether.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="MainCtrl as ctrl">
+    <h2>Login</h2>
+
+    <div>
+        <form ng-submit="ctrl.submit1()" name="myForm">
+            <div class="form-group col-sm-10">
+                <label>Username</label>
+                <input type="text" name="uname" ng-model="ctrl.user.username" class="form-control" required
+                       ng-minlength="4">
+                <span ng-show="myForm.uname.$error.required">
+                     This is a required field
+                </span>
+            </div>
+            <div class="form-group col-sm-10">
+                <label>Password</label>
+                <input type="password" name="pass" ng-model="ctrl.user.password" class="form-control " required>
+                <span ng-show="myForm.pass.$error.required">
+                     This is a required field
+                </span>
+            </div>
+            <div class="form-group col-sm-10">
+                <label>Email</label>
+                <input type="email" name="email" ng-model="ctrl.user.email" class="form-control" required>
+                 <span ng-show="myForm.email.$error.required">
+                     This is a required field
+                </span>
+            </div>
+            <div class="form-group col-sm-10">
+                <input type="submit" value="Submit" ng-disabled="myForm.$invalid">
+                <input type="reset" value="Reset" ng-disabled="myForm.$pristine">
+            </div>
+        </form>
+    </div>
+    <form ng-submit="ctrl.submit2()">
+        <input type="text" ng-model="ctrl.emp.username">
+        <input type="password" ng-model="ctrl.emp.password">
+        <input type="submit" value="Submit">
+    </form>
+
+</div>
+</body>
+</html>
