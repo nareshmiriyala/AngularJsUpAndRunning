@@ -7,7 +7,19 @@
   <version>1.0-SNAPSHOT</version>
   <name>AngularJsUpAndRunning Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.4.0.RELEASE</version>
+  </parent>
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
   <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -17,5 +29,11 @@
   </dependencies>
   <build>
     <finalName>AngularJsUpAndRunning</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
   </build>
 </project>
